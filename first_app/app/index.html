@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+   
+  </head>
+  <body ng-app="firstApp" ng-controller="MainCtrl">
+    <!--[if lte IE 8]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <!-- Add your site or application content here -->
+    <div class="header">
+      <h1 class="app_title" href="#/">firstApp</h1> 
+    </div>
+
+    <div ng-controller="Language">
+      <h2 translate="TITLE">Hello</h2>
+        <p translate="FOO">This is a paragraph</p>
+
+          <button class="btn" ng-click="changeLanguage('en')" translate="BUTTON_LANG_EN" class="ng-scope">english</button>
+          <button class="btn" ng-click="changeLanguage('de')" translate="BUTTON_LANG_DE" class="ng-scope">german</button>
+
+     </div>
+
+
+
+
+    <div class="container">
+
+      <h1>Venez decouvrir des voitures d'exception</h1> 
+
+ <div ng-app='carApp'> 
+ 
+<div ng-controller="car">
+  <div>
+    Toute nos marques:
+    <span ng-repeat="entry in array">{{entry.marque}} </span>
+  </div>
+  <div>
+    les marques avec un "r":
+    <span ng-repeat="entry in filteredArray">{{entry.marque}} </span>
+  </div>
+  </div>
+</div>
+
+    <div ng-app='demoApp'> 
+      <div ng-controller='Demo'>
+        <div infinite-scroll='loadMore()' infinite-scroll-distance='2'>
+          <img ng-repeat='image in images' ng-src='http://placehold.it/225x250&text={{image}}'>
+        </div>
+      </div>
+    </div>
+ </div>
+
+    <div class="footer">
+      <div class="container">
+        <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
+      </div>
+    </div>
+
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+     <script>
+       !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
+       (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
+       r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
+       }(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+       ga('create', 'UA-XXXXX-X');
+       ga('send', 'pageview');
+    </script>
+
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+     <script type='text/javascript' src='bower_components/jquery/dist/jquery.min.js'></script>
+    <script type='text/javascript' src='bower_components/angular/angular.min.js'></script>
+    <script type='text/javascript' src='bower_components/ngInfiniteScroll/build/ng-infinite-scroll.min.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-translate/2.6.1/angular-translate.js"></script>
+
+        <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        
+        
+        <script src="scripts/controllers/Language.js"></script>
+        <script src="scripts/controllers/car.js"></script>
+        <script src="scripts/controllers/Demo.js"></script>
+        <script src="scripts/controllers/main.js"></script>
+       
+        <!-- endbuild -->
+</body>
+</html>
